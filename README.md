@@ -148,23 +148,24 @@ exit
 
 
 
-## **Step 7.  Download and Install SonarQube**
+## **Step 5.  Download and Install SonarQube**
 
-Install the zip utility, which is needed to unzip the SonarQube files.
-```
+#### 1. **Install the zip utility, which is needed to unzip the SonarQube files.**
+
+``` bash
 sudo apt install zip -y
 ```
 
 
 
-## **Step 8. installing the latest version of SonarQube 10.4 Community Edition (free version)**
+#### 2. **installing the latest version of SonarQube 10.4 Community Edition (free version)**
 
 ``` bash
 sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.0.0.68432.zip
 
 ```
 
-## **Step 9. Move the unzipped files to the /opt/sonarqube directory**
+#### 3. **Move the unzipped files to the /opt/sonarqube directory**
 
 ``` bash
 sudo unzip sonarqube-10.0.0.68432.zip
@@ -172,11 +173,11 @@ sudo mv sonarqube-10.0.0.68432 sonarqube
 sudo mv sonarqube /opt/
 ```
 
-## **Step 10. Add SonarQube Group and User**
+## **Step 6. Add SonarQube Group and User**
 
 Create a dedicated user and group for SonarQube, which can not run as the root user.
 
-Note: You can give any name for the sonar user and group. I have here given the user and group name to be the same i.e ddsonar.
+**Note:** You can give any name for the sonar user and group. I have here given the user and group name to be the same i.e ddsonar.
 
 #### **1.Create a sonar group.**
 
@@ -196,7 +197,7 @@ sudo chown ddsonar:ddsonar /opt/sonarqube -R
 
 
 
-## **Step 11. Configure SonarQube**
+## **Step 7. Configure SonarQube**
 
 #### 1. Edit the SonarQube configuration file.
 
@@ -218,14 +219,14 @@ sonar.jdbc.url=jdbc:postgresql://localhost:5432/sqube
 ![image](https://github.com/user-attachments/assets/c5ba81d8-99c6-4a68-95c7-ff70df9c98e3)
 
 
-## **Step 12. To edit the SonarQube script file**
+## **Step 8. To edit the SonarQube script file**
 
 ``` bash
 sudo nano /opt/sonarqube/bin/linux-x86-64/sonar.sh
 ```
 
 
-## **Step 13. Select the branch you want to merge**
+## **Step 9. Select the branch you want to merge**
 
 ``` bash
 RUN_AS_USER=ddsonar
@@ -233,7 +234,7 @@ RUN_AS_USER=ddsonar
 ```
 
 
-## **Step 14. Setup Systemd service**
+## **Step 10. Setup Systemd service**
 
 #### 1. **Create a new service file using a text editor**
 
@@ -291,7 +292,7 @@ sudo systemctl status sonar
 
 
 
-## **Step 13. Modify Kernel System Limits**
+## **Step 11. Modify Kernel System Limits**
 
 #### 1. **Edit the sysctl configuration file.**
 ``` bash
@@ -317,7 +318,7 @@ sudo reboot
 
 ___
 
-## **Step 15.Access SonarQube Web Interface**
+## **Step 12.Access SonarQube Web Interface**
 
 
 #### 1. Access SonarQube in a web browser at your server’s IP address on port 9000.
@@ -333,28 +334,22 @@ http://100.26.240.39:9000
 Once logged in, SonarQube will prompt you to change your password. Enter the current password “admin” and then enter your new password twice as prompted.
 
 
-## **Step 24. Log in to SonarQube using the username “admin” and password “admin”**
+## **Step 13. Log in to SonarQube using the username “admin” and password “admin”**
 ![image](https://github.com/user-attachments/assets/861bb0fb-5295-4fc2-9670-d6c1395a2fcd)
 
-## **Step 25. Go to SonarQube and select the project**
+## **Step 14. Go to SonarQube and select the project**
 ![image](https://github.com/user-attachments/assets/732af797-d1a9-4ff7-b4ad-78dad343e861)
 
 
-## **Step 26. Create a Local Project: Set up a new or existing project on your machine**
-
-
-## **Step 27. Configure the Project: Prepare your project for analysis by configuring the necessary files**
+## **Step 15. Configure the Project: Prepare your project for analysis by configuring the necessary files**
 ![image](https://github.com/user-attachments/assets/038f90ae-92d1-44ff-9ee6-afa780561bbc)
 
-## **Step 28. Analysis your project which you want**
+## **Step 16. Analysis your project which you want**
 ![image](https://github.com/user-attachments/assets/71917427-1f21-47f5-baf4-5c67fe35dfc1)
 
 
-## **Step 29. Generate Token: Create an authentication token in SonarQube**
 
-
-
-## **Step 30. Copy the Token: Copy the generated SonarQube token to use for authentication when running the SonarScanner**
+## **Step 17. Copy the Token: Copy the generated SonarQube token to use for authentication when running the SonarScanner**
 
 ![image](https://github.com/user-attachments/assets/c90f31f1-7071-410f-94f1-cd384e6db8d8)
 
@@ -362,22 +357,14 @@ Once logged in, SonarQube will prompt you to change your password. Enter the cur
 
 
 
-## **Step 32.Run Analyze on your project**
+## **Step 18.Run Analyze on your project**
 ![image](https://github.com/user-attachments/assets/324e265d-aff7-494f-8033-82e1d646931b)
 
 
 
 
-## **Step 35. Result**
+## **Step 19. Result**
 ![image](https://github.com/user-attachments/assets/31bfee29-a71b-42d7-bd2c-8ced47bf9992)
-
-
- ## **Steps 36. Report** 
-| Link         | Description         |
-|--------------|------------------------|
-| [Artifact](https://github.com/avengers-p11/Documentation/blob/main/Application%20CI%20Design/Java%20CI%20Checks/Bugs%20Analysis/salary-0.1.0-RELEASE.jar.original)           |File |
-| [SCA](https://github.com/avengers-p11/Documentation/blob/main/Application%20CI%20Design/Java%20CI%20Checks/Unit%20Testing%20/report)| Report |
-#
 
 
 
