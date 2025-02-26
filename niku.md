@@ -50,32 +50,6 @@ createuser ddsonar
 
 
 
-### **10. Set a password for postgres user**
-
-- To Set a password for PostgreSQL on your system, please follow the link below for the Set a password for Postgres user. :- [Set a password for postgres user](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Pooja-SCRUM-14/Common/Software/PostgreSql/configuration/Readme.md#step-2-steps-to-set-a-password-for-postgres-user)
-
-**Note:-** If you are facing a PostgreSQL authentication error due to an incorrect password for the user 'postgres' on localhost (127.0.0.1) at port 5432, you will need to reset the password.
-
-Never use the default username and password when setting up your database.
-
-We have to use a strong password for best practice.
-
----
-
-
-### **11. Edit PostgreSQL Configuration**
-
-- To Configuration PostgreSQL on your system, please follow the link below for the PostgreSQL Configuration Guide. :- [PostgreSQL Configuration Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Pooja-SCRUM-14/Common/Software/PostgreSql/configuration/Readme.md#step-3-configure-postgresql-for-external-connections)
-
-**example :-**
-```bash
-   listen_addresses = '127.0.0.1,172.31.0.1'
-```
-
-  Open the PostgreSQL configuration file for editing.
- To configure settings like listening addresses, port, and other database parameters.
-
----
 
 #### 9. Log in to PostgreSQL.
 
