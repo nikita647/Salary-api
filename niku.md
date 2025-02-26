@@ -1,12 +1,6 @@
 #    **POC of Static Code Anaylysis in Java CI Checks**
 
-
-
-
 **Table of Contents**
-
-
-
 
 
 
@@ -18,6 +12,7 @@
 ``` bash
 sudo apt update
 ```
+
 ``` bash
 sudo apt upgrade -y
 ```
@@ -34,61 +29,53 @@ sudo apt install -y openjdk-17-jdk
 ``` bash
 java -version
 ```
+
 ![image](https://github.com/user-attachments/assets/6ed17dd0-d0dd-42c0-a21e-407acb1cb2a9)
-## **Step 4. Install and configure PostgreSQL**
 
+### **Step 4. Install PostgreSQL**
 
-#### 1. Adding the PostgreSQL repository.
+- To install PostgreSQL on your system, please follow the link below for the PostgreSQL Installation Guide. :- [PostgreSQL Installation Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Pooja-SCRUM-14/Common/Software/PostgreSql/installation/Readme.md)
 
-``` bash
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" /etc/apt/sources.list.d/pgdg.list'
+Install PostgreSQL (a relational database) and additional contributed packages.
 
-```
-![image](https://github.com/user-attachments/assets/1f97e4ae-c98f-421b-8ccd-f5499142242f)
-#### 2. Add the PostgreSQL signing key.
+---
 
-``` bash
-wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+Example:-
 
-```
-
-#### 3. Install PostgreSQL.
-
-``` bash
-sudo apt install postgresql postgresql-contrib -y
-
-```
-![image](https://github.com/user-attachments/assets/3abf0b88-1acf-4562-bcbc-ea33fa74dee8)
-
-
-#### 4. Enable the database server to start automatically on reboot.
-
-``` bash
-sudo systemctl enable postgresql
-```
-
-#### 5. Start the database server.
-
-``` bash
-sudo systemctl start postgresql
-```
-
-#### 6. Check the status of the database server.
-
-``` bash
-sudo systemctl status postgresql
-```
-![image](https://github.com/user-attachments/assets/334afc41-a4e3-4fb9-a167-054cb3d17732)
-#### 7. Switch to the Postgres user.
-``` bash
-sudo -i -u postgres
-```
-
-#### 8. Create a database user named ddsonar.
+Create a database user named ddsonar.
 ``` bash
 createuser ddsonar
 ```
 
+
+
+
+### **10. Set a password for postgres user**
+
+- To Set a password for PostgreSQL on your system, please follow the link below for the Set a password for Postgres user. :- [Set a password for postgres user](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Pooja-SCRUM-14/Common/Software/PostgreSql/configuration/Readme.md#step-2-steps-to-set-a-password-for-postgres-user)
+
+**Note:-** If you are facing a PostgreSQL authentication error due to an incorrect password for the user 'postgres' on localhost (127.0.0.1) at port 5432, you will need to reset the password.
+
+Never use the default username and password when setting up your database.
+
+We have to use a strong password for best practice.
+
+---
+
+
+### **11. Edit PostgreSQL Configuration**
+
+- To Configuration PostgreSQL on your system, please follow the link below for the PostgreSQL Configuration Guide. :- [PostgreSQL Configuration Guide](https://github.com/snaatak-Zero-Downtime-Crew/Documentation/blob/Pooja-SCRUM-14/Common/Software/PostgreSql/configuration/Readme.md#step-3-configure-postgresql-for-external-connections)
+
+**example :-**
+```bash
+   listen_addresses = '127.0.0.1,172.31.0.1'
+```
+
+  Open the PostgreSQL configuration file for editing.
+ To configure settings like listening addresses, port, and other database parameters.
+
+---
 
 #### 9. Log in to PostgreSQL.
 
@@ -105,7 +92,7 @@ psql
 ALTER USER [Created_user_name] WITH ENCRYPTED password 'my_strong_password';
 
 ```
-for example
+For example:-
 
 ``` bash
 ALTER USER ddsonar WITH ENCRYPTED password 'nikita0919';
